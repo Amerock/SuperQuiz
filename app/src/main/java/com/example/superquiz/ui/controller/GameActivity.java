@@ -61,10 +61,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             mQuestionBank = generateQuestionBank();
             mCurrentQuestion = mQuestionBank.getCurrentQuestion();
         } else {
-            mQuestionBank = (QuestionBank) savedInstanceState.getSerializable(BUNDLE_STATE_QUESTION_BANK);
+            mQuestionBank = savedInstanceState.getParcelable(BUNDLE_STATE_QUESTION_BANK);
             mRemainingQuestionCount = savedInstanceState.getInt(BUNDLE_STATE_QUESTION_COUNT);
             mScore = savedInstanceState.getInt(BUNDLE_STATE_SCORE);
-            mCurrentQuestion = (Question) savedInstanceState.getSerializable("currentQuestion");
+            mCurrentQuestion = savedInstanceState.getParcelable("currentQuestion");
         }
 
         displayQuestion(mCurrentQuestion);
@@ -146,22 +146,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable(BUNDLE_STATE_QUESTION_BANK, (Serializable) mQuestionBank);
+        outState.putParcelable(BUNDLE_STATE_QUESTION_BANK, mQuestionBank);
         outState.putInt(BUNDLE_STATE_QUESTION_COUNT, mRemainingQuestionCount);
         outState.putInt(BUNDLE_STATE_SCORE, mScore);
-        outState.putSerializable("currentQuestion", (Serializable) mCurrentQuestion);
+        outState.putParcelable("currentQuestion", mCurrentQuestion);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mQuestionBank = (QuestionBank) savedInstanceState.getSerializable(BUNDLE_STATE_QUESTION_BANK);
+        mQuestionBank = savedInstanceState.getParcelable(BUNDLE_STATE_QUESTION_BANK);
         mRemainingQuestionCount = savedInstanceState.getInt(BUNDLE_STATE_QUESTION_COUNT);
         mScore = savedInstanceState.getInt(BUNDLE_STATE_SCORE);
-        mCurrentQuestion = (Question) savedInstanceState.getSerializable("currentQuestion");
+        mCurrentQuestion = savedInstanceState.getParcelable("currentQuestion");
         displayQuestion(mCurrentQuestion);
     }
-
     private QuestionBank generateQuestionBank() {
         List<Question> questionList = new ArrayList<>();
 
