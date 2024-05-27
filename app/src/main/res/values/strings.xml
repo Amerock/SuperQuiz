@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SuperQuiz</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_dashboard">Tabeau de bord</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="bouton_jouer">Jouer</string>
+    <string name="Entrer_du_nom">Votre nom</string>
+    <string name="Bienvenue">Bienvenue Quel est ton nom ? </string>
+    <string name="Question"> Question?</string>
+    <string name="welcome_back_with_score">Vous êtes de retour, %1$s ! Votre dernier score était : %2$d</string>
+        <string name="question1">Quand le premier homme a-t-il marché sur la lune ? </string>
+        <string-array name="reponses_question1">
+            <item>1958</item>
+            <item>1962</item>
+            <item>1967</item>
+            <item>1969</item>
+        </string-array>
+        <string name="question2"> Quel est le numéro de maison des Simpson ?</string>
+        <string-array name="reponses_question2">
+            <item>42</item>
+            <item>101</item>
+            <item>666</item>
+            <item>742</item>
+        </string-array>
+        <string name="question3">Qui a peint Mona Lisa ? </string>
+        <string-array name="reponses_question3">
+            <item>Edvard Munch</item>
+            <item>Leonardo Da Vinci</item>
+            <item>Michelangelo</item>
+            <item>Picasso</item>
+        </string-array>
+
+</resources>
